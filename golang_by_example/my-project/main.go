@@ -1,24 +1,71 @@
 package main
 
-import (
-	"fmt"
-	"my-project/mathematic/ingo"
-)
+import "fmt"
+
+// Numeric constant
+const MaxBalance = 100_000
+
+// Exported struct (capitalized)
+type User struct {
+	Name     string
+	LastName string
+	Age      int
+	Balance  float64
+	Active   bool
+}
+
+// SwapNames returns first and last name swapped (multiple return)
+func SwapNames(first, last string) (string, string) {
+	return last, first
+}
+
+// ComputeStats returns sum and average of balances (named return values)
+func ComputeStats(users []User) (sum float64, avg float64) {
+	for _, u := range users {
+		sum += u.Balance
+	}
+	if len(users) > 0 {
+		avg = sum / float64(len(users)) // type conversion here
+	}
+	return // naked return
+}
 
 func main() {
-	sum := ingo.Add(4, 6)
-	product := ingo.Multiply(4, 6)
+	// Using var + zero values
+	var users []User
+	var activeCount int
 
-	fmt.Println(sum)
-	fmt.Println(product)
+	// Type inference with :=
+	users = []User{
+		{Name: "Lucky", LastName: "Baraka", Age: 25, Balance: 5000, Active: true},
+		{Name: "Alice", LastName: "Wanjiku", Age: 30, Balance: 7500.50, Active: false},
+		{Name: "Bob", LastName: "Karanja", Age: 22, Balance: 3200.75, Active: true},
+	}
 
-	diff := ingo.Subtract(3, 4)
-	fmt.Println(diff)
+	// Loop through users
+	for _, u := range users {
+		if u.Active {
+			activeCount++
+		}
+		// Swap names using multiple return
+		u.Name, u.LastName = SwapNames(u.Name, u.LastName)
 
-	fmt.Println(ingo.Version)
+		// Type conversion: float64 -> int
+		balanceInt := int(u.Balance)
+		fmt.Printf("User: %s %s | Age: %d | Balance: %d | Active: %t\n",
+			u.Name, u.LastName, u.Age, balanceInt, u.Active)
+	}
 
-	a, b := ingo.Swap("Baraka", "Lucky")
-	fmt.Println(a, b)
+	fmt.Println("Active Users:", activeCount)
 
-	fmt.Println(ingo.Split(25))
+	// Compute sum and average balances
+	sum, avg := ComputeStats(users)
+	fmt.Printf("Total Balance: %.2f | Average Balance: %.2f\n", sum, avg)
+
+	// Demonstrating numeric constants
+	if sum > MaxBalance {
+		fmt.Println("Warning: Total balance exceeds the maximum allowed!")
+	} else {
+		fmt.Println("Total balance is within limits.")
+	}
 }
