@@ -41,7 +41,9 @@ func TestMaxIntTableDrivenDevelopment(t *testing.T) {
 	}
 
 	for _, tt := range tests {
+		tt := tt
 		t.Run(tt.name, func(t *testing.T) {
+			t.Parallel()
 			t.Logf("starting with %d  and %d expecting %d", tt.a, tt.b, tt.want)
 			got := MaxInt(tt.a, tt.b)
 			if got != tt.want {

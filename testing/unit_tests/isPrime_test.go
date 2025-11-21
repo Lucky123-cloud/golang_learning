@@ -49,7 +49,9 @@ func TestIsPrimeTableDrivenTest(t *testing.T) {
 	}
 
 	for _, tt := range tests {
+		tt := tt
 		t.Run(tt.name, func(t *testing.T) {
+			t.Parallel()
 			t.Logf("Starting with %d expecting %t", tt.input, tt.want)
 			got := IsPrime(tt.input)
 			if got != tt.want {
