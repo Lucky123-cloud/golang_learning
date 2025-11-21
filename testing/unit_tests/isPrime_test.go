@@ -50,6 +50,7 @@ func TestIsPrimeTableDrivenTest(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
+			t.Logf("Starting with %d expecting %t", tt.input, tt.want)
 			got := IsPrime(tt.input)
 			if got != tt.want {
 				t.Errorf("Expected %t, got %t", tt.want, got)

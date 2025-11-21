@@ -53,6 +53,7 @@ func TestCountVowelsTableDrivenTest(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
+			t.Logf("Starting the test with %s, expecting %d", tt.input, tt.want)
 			got := CountVowels(tt.input)
 			if got != tt.want {
 				t.Errorf("Test failed!, expected %d, got %d", tt.want, got)

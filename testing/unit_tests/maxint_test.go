@@ -42,6 +42,7 @@ func TestMaxIntTableDrivenDevelopment(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
+			t.Logf("starting with %d  and %d expecting %d", tt.a, tt.b, tt.want)
 			got := MaxInt(tt.a, tt.b)
 			if got != tt.want {
 				t.Errorf("Test did not pass, expected %d, got %d", tt.want, got)

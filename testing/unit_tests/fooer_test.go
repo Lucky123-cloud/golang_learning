@@ -28,6 +28,7 @@ func TestFooerTableDrivenTest(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
+			t.Logf("Starting the test with %d, expecting %s", tt.input, tt.want)
 			got := Fooer(tt.input)
 			if got != tt.want {
 				t.Errorf("Got %s, expected %s", got, tt.want)

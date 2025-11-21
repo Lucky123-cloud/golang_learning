@@ -38,6 +38,7 @@ func TestReverse_String(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
+			t.Logf("strating with %s expecting %s", tt.input, tt.want)
 			got := Reverse_string(tt.input)
 			if got != tt.want {
 				t.Errorf("Testing case failed, expected %s, got %s", tt.want, got)
