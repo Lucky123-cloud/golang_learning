@@ -15,6 +15,10 @@ import (
 
 // we want to now use table driven test
 func TestFooerTableDrivenTest(t *testing.T) {
+	if testing.Short() {
+		t.Skip("Skip the test in short mode")
+	}
+
 	tests := []struct {
 		name  string
 		input int
