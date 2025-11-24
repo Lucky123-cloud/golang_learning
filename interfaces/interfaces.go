@@ -1,9 +1,11 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 // interface implementation
-type Animal interface {
+type Speaker interface {
 	speak() string
 }
 
@@ -17,17 +19,15 @@ func (d Dog) speak() string {
 type Cat struct{}
 
 func (c Cat) speak() string {
-	return "Meow"
-}
-
-func MakeSpeak(a Animal) {
-	fmt.Println(a.speak())
+	return "Meow!"
 }
 
 func main() {
-	dog := Dog{}
-	cat := Cat{}
+	var s Speaker
 
-	MakeSpeak(dog)
-	MakeSpeak(cat)
+	s = Dog{}
+	fmt.Println(s.speak())
+
+	s = Cat{}
+	fmt.Println(s.speak())
 }

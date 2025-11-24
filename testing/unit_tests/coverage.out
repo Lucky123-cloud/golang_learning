@@ -1,0 +1,23 @@
+mode: set
+example.com/hello/testing/unit_tests/countVowels.go:7.32,12.23 3 1
+example.com/hello/testing/unit_tests/countVowels.go:12.23,13.68 1 1
+example.com/hello/testing/unit_tests/countVowels.go:13.68,15.4 1 1
+example.com/hello/testing/unit_tests/countVowels.go:17.2,17.14 1 1
+example.com/hello/testing/unit_tests/fooer.go:7.28,10.11 2 1
+example.com/hello/testing/unit_tests/fooer.go:10.11,12.3 1 1
+example.com/hello/testing/unit_tests/fooer.go:14.2,14.26 1 1
+example.com/hello/testing/unit_tests/isPrime.go:3.28,4.14 1 1
+example.com/hello/testing/unit_tests/isPrime.go:4.14,6.3 1 1
+example.com/hello/testing/unit_tests/isPrime.go:8.2,8.30 1 1
+example.com/hello/testing/unit_tests/isPrime.go:8.30,9.17 1 1
+example.com/hello/testing/unit_tests/isPrime.go:9.17,11.4 1 1
+example.com/hello/testing/unit_tests/isPrime.go:13.2,13.13 1 1
+example.com/hello/testing/unit_tests/maxint.go:3.27,4.12 1 1
+example.com/hello/testing/unit_tests/maxint.go:4.12,6.3 1 1
+example.com/hello/testing/unit_tests/maxint.go:8.2,8.10 1 1
+example.com/hello/testing/unit_tests/reverse_string.go:3.40,6.27 2 1
+example.com/hello/testing/unit_tests/reverse_string.go:6.27,8.3 1 1
+example.com/hello/testing/unit_tests/reverse_string.go:10.2,10.15 1 1
+example.com/hello/testing/unit_tests/sumSlice.go:3.31,6.25 2 1
+example.com/hello/testing/unit_tests/sumSlice.go:6.25,8.3 1 1
+example.com/hello/testing/unit_tests/sumSlice.go:9.2,9.12 1 1
