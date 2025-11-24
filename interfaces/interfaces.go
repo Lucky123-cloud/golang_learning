@@ -28,6 +28,11 @@ func MakeSpeak(s Speaker) {
 }
 
 func main() {
+
+	animals := []Speaker{Dog{}, Cat{}}
+	for _, a := range animals {
+		fmt.Println(a.speak())
+	}
 	var s Speaker
 
 	s = Dog{}
