@@ -1,11 +1,15 @@
 package main
 
+
 import (
 	"fmt"
+	"net/http"
 )
 
 func main() {
-	fmt.Println("Hello World!")
+	http.HandleFunc("/hello", w http.ResponseWriter, r *http.RequestWriter) {
+		return fmt.Sprintf(w, "Hello World from Kenya") 
+	}
+	fmt.Println("Server Running from port 5000")
+	http.ListenAndServe(":5000")
 }
-
-// Compare this snippet from golang_w3s/Go_maps/maps01.go:
