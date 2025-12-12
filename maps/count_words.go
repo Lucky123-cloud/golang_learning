@@ -1,26 +1,33 @@
-//count how many times a word appears
+//count how many times a word appears in a sentence - we need to first of all to break the text/line into tokens 
+
+
+//here is the implementation
+
 
 package main
 
 
-import "fmt"
-import "strings"
+import (
+	"fmt"
+	"strings"
+)
 
-func CountWords(text string) map[string]int {
-	wordCount := make(map[string]int)
+
+//WordCount counts the number of times a word appears in a full sentence
+//it returns a map of words as a string and the number of times they appear as integers
+func WordCount(text string) map[string]int{
+	countWord := make(map[string]int)
 	words := strings.Fields(text)
 
 	for _, w := range words {
-		wordCount[w]++
+		countWord[w]++
 	}
-	return wordCount
-
+	return countWord
 }
 
 func main() {
-	text := "go is fun and go is powerful"
-	counts := CountWords(text)
-	fmt.Println(counts)
+	lines := "Hello World I am Lucky Baraka, and I am Lucky to be a go programmer because go is one of the best in the word"
+	res := WordCount(lines)
+	fmt.Println(res)
 }
-
 
