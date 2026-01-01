@@ -43,7 +43,7 @@ func main() {
 		fmt.Println(">>", v)
 	}
 
-	v, ok : = <-ch
+	v, ok := <-ch
 	fmt.Println("Closed:", v, "ok", ok)
 	/*
 	The "for range" above does
