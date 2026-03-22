@@ -8,5 +8,8 @@ func main() {
 	type rune = int32
 	type byte = uint8
 
-	fmt.Println()
+	i := 42
+	r := byte(i)
+
+	fmt.Println(r)
 }
